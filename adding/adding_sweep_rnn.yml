@@ -1,0 +1,32 @@
+program: adding_task.py
+method: grid
+project: PROJECT_NAME
+entity: ENTITY_NAME
+name: Adding_Sweep_iRNN
+parameters:
+  model_type:
+    values: ['rnn']
+  init:
+    values: ['eye']
+  n_hid:
+    values: [100]
+  lr:
+    values: [1e-2, 1e-3, 1e-4]
+  n_ch:
+    values: [1]
+  ksize:
+    values: [3]
+  act:
+    value: 'relu'
+  max_steps:
+    value: 60000
+  T:
+    values: [100, 200, 400, 700, 1000]
+  grad_clip:
+    values: [0.0, 1.0, 10.0, 100.0, 1000.0]
+  batch:
+    values: [128]
+  is_sweep:
+    values: ['yes']
+  log_interval:
+    values: [100]

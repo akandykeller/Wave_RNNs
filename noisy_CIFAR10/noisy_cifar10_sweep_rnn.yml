@@ -1,0 +1,39 @@
+program: noisy_cifar10_task.py
+method: grid
+project: PROJECT_NAME
+entity: ENTITY_NAME
+name: Cifar10_rnn
+parameters:
+  model_type:
+    distribution: categorical
+    values: ['rnn']
+  n_hid:
+    distribution: categorical
+    values: [144, 256, 529, 1024]
+  lr:
+    distribution: categorical
+    values: [0.001, 0.0001, 0.00001]
+  lr_drop_rate:
+    distribution: categorical
+    values: [10.0]
+  lr_drop_epoch:
+    distribution: categorical
+    values: [100]
+  n_ch:
+    distribution: categorical
+    values: [1]
+  ksize:
+    distribution: categorical
+    values: [3]
+  act:
+    distribution: categorical
+    values: ['relu']
+  epochs:
+    distribution: categorical
+    values: [250]
+  init:
+    distribution: categorical
+    values: ['eye']
+  freeze_rnn:
+    distribution: categorical
+    values: ['no']

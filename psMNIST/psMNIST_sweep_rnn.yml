@@ -1,0 +1,45 @@
+program: psMNIST_task.py
+method: grid
+project: TCoRNN
+entity: ENTITY_NAME
+name: psMNIST_rnn
+parameters:
+  model_type:
+    distribution: categorical
+    values: ['rnn']
+  n_hid:
+    distribution: categorical
+    values: [256]
+  n_ch:
+    distribution: categorical
+    values: [1]
+  lr_scheduler:
+    distribution: categorical
+    values: ['step']
+  lr:
+    distribution: categorical
+    values: [0.001, 0.0001, 0.00001]
+  lr_drop_rate:
+    distribution: categorical
+    values: [3.33, 10.0]
+  lr_drop_epoch:
+    distribution: categorical
+    values: [40, 100]
+  act:
+    distribution: categorical
+    values: ['relu']
+  epochs:
+    distribution: categorical
+    values: [250]
+  init:
+    distribution: categorical
+    values: ['eye']
+  freeze_rnn:
+    distribution: categorical
+    values: ['no']
+  grad_clip:
+    distribution: categorical
+    values: [0.0, 1.0, 10.0, 100.0, 1000.0]
+  batch:
+    distribution: categorical
+    values: [128]

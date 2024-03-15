@@ -1,0 +1,45 @@
+program: noisy_cifar10_task.py
+method: grid
+project: PROJECT_NAME
+entity: ENTITY_NAME
+name: Cifar10_wrnn
+parameters:
+  model_type:
+    distribution: categorical
+    values: ['wrnn']
+  n_hid:
+    distribution: categorical
+    values: [144, 256]
+  lr:
+    distribution: categorical
+    values: [0.001, 0.0001, 0.00001]
+  lr_drop_rate:
+    distribution: categorical
+    values: [10.0]
+  lr_drop_epoch:
+    distribution: categorical
+    values: [100]
+  n_ch:
+    distribution: categorical
+    values: [16]
+  ksize:
+    distribution: categorical
+    values: [3]
+  act:
+    distribution: categorical
+    values: ['relu']
+  epochs:
+    distribution: categorical
+    values: [120]
+  init:
+    distribution: categorical
+    values: ['fwd']
+  freeze_rnn:
+    distribution: categorical
+    values: ['no']
+  solo_init:
+    distribution: categorical
+    values: ['yes']
+  batch:
+    distribution: categorical
+    values: [256]
